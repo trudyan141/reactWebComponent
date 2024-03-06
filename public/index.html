@@ -29,7 +29,14 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <!-- <div id="root"></div> -->
-    <r2w-lifi-widget config='{}' /> 
+    <r2w-lifi-widget config='{"containerStyle":{"border":"1px solid rgb(234, 234, 234)","borderRadius":"16px"}}' integrator="NODO" /> 
+    <script>
+      document.addEventListener('lifiEmitEvent', function (event) {
+        // Access the 'message' from the event detail
+        const messageFromEvent = event.detail.message;
+        console.log('Received message:', messageFromEvent);
+      });
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

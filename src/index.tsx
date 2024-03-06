@@ -3,7 +3,7 @@ import Widget from './components/LifiWidgetReact';
 import './index.css';
 import { reportWebVitals } from './reportWebVitals';
 
-const wcWidget = r2wc(Widget, { props: { config: "json" } });
+const wcWidget = r2wc(Widget, { props: { config: "json", integrator: "string" } });
 
 customElements.define("r2w-lifi-widget", wcWidget);
 

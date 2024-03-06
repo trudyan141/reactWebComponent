@@ -1,12 +1,22 @@
 import { LiFiWidget } from '@lifi/widget';
 
 
-function LifiWidgetReact({ config } : any) {
+function LifiWidgetReact({ config, integrator }: any) {
+  const emitEvent = () => {
+    const message = 'event from wc widget';
+    const event = new CustomEvent('lifiEmitEvent', {
+      detail: { message },
+    });
+    document.dispatchEvent(event);
+  }
   return (
-    <LiFiWidget
-      config={config}
-      integrator="cra-example"
-    />
+    <>
+      <button onClick={emitEvent}> Emit event  </button>
+      <LiFiWidget
+        config={config}
+        integrator={integrator}
+      />
+    </>
   );
 }
 
